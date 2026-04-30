@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Reel Mower Shop — Christchurch's Cylinder Mower Specialists</title>
+<meta name="description" content="Christchurch's specialist reel mower repair and sharpening workshop. Cylinder mower grinding, small engine repair, full servicing. 4.9 stars. Call +64 210 300 315.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #080e07;
+  --bg2:     #0e1a0c;
+  --bg3:     #142010;
+  --green:   #3e8f30;
+  --greenLt: #56b845;
+  --lime:    #8cc63f;
+  --gold:    #c8a93e;
+  --text:    #eef4ea;
+  --body:    rgba(190,215,183,0.74);
+  --dim:     rgba(140,170,132,0.42);
+  --border:  rgba(255,255,255,0.07);
+  --borderH: rgba(255,255,255,0.13);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;inset-x:0;z-index:100;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;transition:background .35s,box-shadow .35s}
+nav.scrolled{background:rgba(8,14,7,.94);backdrop-filter:blur(18px);box-shadow:0 1px 0 var(--border)}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.nav-logo-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--green),var(--greenLt));display:flex;align-items:center;justify-content:center;font-size:1.35rem;flex-shrink:0}
+.nav-logo-text{display:flex;flex-direction:column;gap:0}
+.nav-logo-name{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.01em;line-height:1}
+.nav-logo-sub{font-size:9.5px;color:var(--dim);letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:.2rem}
+.nav-links a{font-size:13px;font-weight:500;color:var(--body);text-decoration:none;padding:.55rem .95rem;border-radius:6px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:.6rem 1.35rem!important;border-radius:8px!important;font-weight:600!important;transition:filter .2s,transform .15s!important}
+.nav-cta:hover{filter:brightness(1.15)!important;transform:translateY(-1px)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:1px solid var(--border);border-radius:7px;background:rgba(255,255,255,.04)}
+.hamburger span{display:block;width:20px;height:2px;background:var(--body);border-radius:2px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:70px;inset-x:0;background:rgba(8,14,7,.98);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);padding:1.2rem 2rem 1.8rem;z-index:99}
+.mobile-menu a{display:block;padding:.75rem 0;font-size:15px;color:var(--body);text-decoration:none;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none;margin-top:.5rem;padding:.9rem 1rem;text-align:center;background:var(--green);border-radius:8px;color:#fff;font-weight:600}
+.mobile-menu.open{display:block}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=2000&q=85&fm=webp&fit=crop');background-size:cover;background-position:center 40%;filter:saturate(.75) contrast(1.08)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(108deg,rgba(8,14,7,.96) 0%,rgba(8,14,7,.84) 44%,rgba(8,14,7,.52) 76%,rgba(8,14,7,.28) 100%)}
+.hero-overlay2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,7,.18) 0%,transparent 42%,rgba(8,14,7,.94) 100%)}
+.hero-content{position:relative;z-index:10;max-width:1180px;margin:0 auto;padding:0 2rem;padding-top:88px;width:100%}
+.hero-tag{display:inline-flex;align-items:center;gap:.55rem;font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);margin-bottom:1.5rem;padding:.45rem 1rem;border-radius:99px;border:1px solid rgba(140,198,63,.25);background:rgba(140,198,63,.07)}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--greenLt);animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.78)}}
+.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2.9rem,7.2vw,5.6rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:var(--text);margin-bottom:1.5rem;max-width:720px}
+.hero h1 em{font-style:normal;color:var(--greenLt)}
+.hero-sub{font-size:1.05rem;color:var(--body);line-height:1.78;max-width:480px;margin-bottom:2.5rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:3rem}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2.1rem;background:linear-gradient(135deg,var(--green),var(--greenLt));color:#fff;border:none;border-radius:9px;font-size:.93rem;font-weight:600;text-decoration:none;cursor:pointer;transition:filter .25s,transform .2s;box-shadow:0 12px 32px rgba(62,143,48,.28)}
+.btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2.1rem;background:rgba(255,255,255,.05);border:1px solid var(--borderH);color:var(--text);border-radius:9px;font-size:.93rem;font-weight:500;text-decoration:none;transition:border-color .2s,background .2s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.08)}
+.hero-stats{display:flex;flex-wrap:wrap;gap:2.5rem}
+.stat{display:flex;flex-direction:column;gap:.15rem}
+.stat-num{font-family:'Outfit',sans-serif;font-size:1.85rem;font-weight:800;color:var(--text);line-height:1}
+.stat-label{font-size:.7rem;color:var(--dim);letter-spacing:.07em;text-transform:uppercase}
+.stat-accent{color:var(--greenLt)}
+
+/* ── SHAPE DIVIDER ── */
+.shape-down{width:100%;overflow:hidden;line-height:0}
+.shape-down svg{display:block;width:100%;height:56px}
+
+/* ── SECTION COMMONS ── */
+section{padding:5.5rem 2rem}
+.section-inner{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--greenLt);margin-bottom:.9rem;display:flex;align-items:center;gap:.65rem}
+.eyebrow::before{content:'';display:block;width:20px;height:2px;background:var(--greenLt);flex-shrink:0}
+h2{font-family:'Outfit',sans-serif;font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.03;color:var(--text);margin-bottom:1rem}
+.section-body{font-size:.95rem;color:var(--body);line-height:1.82;max-width:520px}
+
+/* ── ABOUT STRIP ── */
+.about-strip{background:var(--bg2);padding:3.2rem 2rem}
+.about-strip-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:2rem}
+.about-stat{text-align:center;padding:1.5rem 1rem;border-radius:14px;background:var(--bg3);border:1px solid var(--border)}
+.about-stat-num{font-family:'Outfit',sans-serif;font-size:2.4rem;font-weight:800;color:var(--greenLt);line-height:1;margin-bottom:.3rem}
+.about-stat-label{font-size:.77rem;color:var(--body);font-weight:500}
+
+/* ── SERVICES ── */
+.services{background:var(--bg2)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;margin-top:3rem}
+.svc-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.8rem;transition:border-color .25s,transform .25s,box-shadow .25s;position:relative;overflow:hidden;cursor:default}
+.svc-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--greenLt));opacity:0;transition:opacity .25s}
+.svc-card:hover{border-color:rgba(86,184,69,.25);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.28)}
+.svc-card:hover::after{opacity:1}
+.svc-icon{width:46px;height:46px;border-radius:11px;background:rgba(62,143,48,.12);border:1px solid rgba(62,143,48,.22);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;font-size:1.35rem}
+.svc-title{font-family:'Outfit',sans-serif;font-size:1.08rem;font-weight:700;color:var(--text);margin-bottom:.45rem;letter-spacing:-.01em}
+.svc-desc{font-size:.86rem;color:var(--body);line-height:1.72}
+
+/* ── GALLERY ── */
+.gallery-section{padding:5.5rem 2rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:1rem;margin-top:3rem}
+.gallery-grid img{width:100%;object-fit:cover;border-radius:13px;display:block;transition:transform .35s,filter .35s}
+.gallery-grid img:hover{transform:scale(1.025);filter:brightness(1.07)}
+.gallery-grid .tall{grid-row:span 2;height:100%}
+.gallery-grid .tall img{height:100%;min-height:360px}
+.gallery-std img{aspect-ratio:4/3}
+
+/* ── WHY US ── */
+.why{background:var(--bg2)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center;margin-top:3rem}
+.why-img{border-radius:18px;overflow:hidden;position:relative}
+.why-img img{width:100%;height:480px;object-fit:cover;object-position:center;display:block}
+.why-img-badge{position:absolute;bottom:1.5rem;left:1.5rem;background:rgba(8,14,7,.92);backdrop-filter:blur(14px);border:1px solid var(--borderH);border-radius:13px;padding:1rem 1.35rem;display:flex;align-items:center;gap:.9rem}
+.badge-icon{font-size:1.7rem}
+.badge-text strong{display:block;font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.1rem}
+.badge-text span{font-size:.75rem;color:var(--dim)}
+.why-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.8rem}
+.why-item{display:flex;align-items:flex-start;gap:.95rem;padding:1.1rem 1.2rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
+.why-item:hover{border-color:rgba(86,184,69,.2)}
+.why-check{width:32px;height:32px;border-radius:8px;background:rgba(62,143,48,.12);border:1px solid rgba(62,143,48,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--greenLt);font-size:.95rem;font-weight:700}
+.why-item-text strong{display:block;font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.18rem}
+.why-item-text span{font-size:.83rem;color:var(--body)}
+
+/* ── REVIEWS ── */
+.reviews-header{display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.rating-big{display:flex;align-items:center;gap:1.2rem}
+.rating-num{font-family:'Outfit',sans-serif;font-size:4.2rem;font-weight:800;color:var(--text);line-height:1}
+.stars-row{display:flex;gap:3px;margin-bottom:.3rem}
+.star{color:#f59e0b;font-size:1.1rem}
+.rating-count{font-size:.82rem;color:var(--dim)}
+.google-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .95rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;font-size:.77rem;color:var(--dim);margin-top:.4rem}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem}
+.review-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.6rem;transition:border-color .2s,transform .2s}
+.review-card:hover{border-color:var(--borderH);transform:translateY(-3px)}
+.review-stars{display:flex;gap:2px;margin-bottom:.9rem}
+.review-text{font-size:.87rem;color:var(--body);line-height:1.76;margin-bottom:1.1rem;font-style:italic}
+.review-author{display:flex;align-items:center;gap:.75rem}
+.review-avatar{width:35px;height:35px;border-radius:50%;background:linear-gradient(135deg,var(--green),#1a4d14);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:#fff;flex-shrink:0}
+.review-name{font-size:.85rem;font-weight:600;color:var(--text)}
+.review-date{font-size:.72rem;color:var(--dim)}
+
+/* ── CONTACT ── */
+.contact{background:var(--bg2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:4rem;margin-top:3rem;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:.95rem;margin-top:1.5rem}
+.contact-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem 1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px}
+.c-icon{width:38px;height:38px;border-radius:9px;background:rgba(62,143,48,.1);border:1px solid rgba(62,143,48,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem}
+.c-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:.2rem}
+.c-val{font-size:.93rem;font-weight:500;color:var(--text)}
+.c-val a{color:var(--text);text-decoration:none;transition:color .2s}
+.c-val a:hover{color:var(--greenLt)}
+
+/* FORM */
+.form-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:2.2rem}
+.form-title{font-family:'Outfit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:1.5rem;letter-spacing:-.01em}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:.42rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.78rem 1rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:.92rem;outline:none;transition:border-color .2s,box-shadow .2s}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(140,170,132,.28)}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(62,143,48,.45);box-shadow:0 0 0 3px rgba(62,143,48,.1)}
+.form-group select{cursor:pointer;color:var(--body)}
+.form-group select option{background:var(--bg3);color:var(--text)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.form-submit{width:100%;padding:.95rem;background:linear-gradient(135deg,var(--green),var(--greenLt));color:#fff;border:none;border-radius:9px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:filter .25s,transform .2s;box-shadow:0 10px 28px rgba(62,143,48,.22);margin-top:.4rem}
+.form-submit:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.form-submit:disabled{opacity:.6;transform:none;cursor:not-allowed}
+.form-note{font-size:.72rem;color:var(--dim);margin-top:.75rem;text-align:center}
+.form-success{display:none;text-align:center;padding:2.5rem 1rem}
+.form-success h3{font-family:'Outfit',sans-serif;font-size:1.5rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
+.form-success p{font-size:.9rem;color:var(--body)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 2rem}
+.footer-inner{max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem}
+.footer-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.footer-links{display:flex;flex-wrap:wrap;gap:1.5rem}
+.footer-links a{font-size:.82rem;color:var(--dim);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-copy{font-size:.74rem;color:var(--dim);width:100%;text-align:center;padding-top:1.2rem;border-top:1px solid var(--border);margin-top:.5rem}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .why-grid{grid-template-columns:1fr}
+  .why-img{order:-1}
+  .contact-grid{grid-template-columns:1fr}
+  .about-strip-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .gallery-grid .tall{grid-row:span 1}
+  .gallery-grid .tall img{min-height:auto}
+  .gallery-std img{aspect-ratio:4/3}
+  .form-row{grid-template-columns:1fr}
+  .hero h1{font-size:2.85rem}
+  .reviews-header{flex-direction:column;align-items:flex-start}
+  section{padding:4rem 1.25rem}
+  .about-strip{padding:2.5rem 1.25rem}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr}
+  .about-strip-inner{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">🌿</div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">A Reel Mower Shop</span>
+      <span class="nav-logo-sub">Christchurch Specialists</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact" class="nav-cta">Get a Quote</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Get a Quote</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Christchurch's Reel Mower Specialists</div>
+    <h1>Sharp blades.<br><em>Perfect cut.</em><br>Every time.</h1>
+    <p class="hero-sub">Christchurch's dedicated reel mower workshop. Cylinder mower grinding, small engine repair, and full servicing — done right by someone who genuinely loves the craft.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 010 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+        Get a Quote
+      </a>
+      <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num"><span class="stat-accent">4.9</span>★</span>
+        <span class="stat-label">Google Rating</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">33</span>
+        <span class="stat-label">5-Star Reviews</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" style="font-size:1.4rem">210 300 315</span>
+        <span class="stat-label">Call Chris</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="about-strip-inner">
+    <div class="about-stat reveal">
+      <div class="about-stat-num">4.9★</div>
+      <div class="about-stat-label">Google Rating</div>
+    </div>
+    <div class="about-stat reveal">
+      <div class="about-stat-num">33+</div>
+      <div class="about-stat-label">Happy Customers</div>
+    </div>
+    <div class="about-stat reveal">
+      <div class="about-stat-num">All</div>
+      <div class="about-stat-label">Makes & Models</div>
+    </div>
+    <div class="about-stat reveal">
+      <div class="about-stat-num">CHC</div>
+      <div class="about-stat-label">Based in Christchurch</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">What We Do</p>
+      <h2>Specialist reel mower<br>services, done properly.</h2>
+      <p class="section-body">Whether your cylinder mower needs a full grind, your engine won't start, or you just want it tuned before the season — Chris has you covered.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-icon">⚙️</div>
+        <div class="svc-title">Cylinder Grinding</div>
+        <p class="svc-desc">Precision relief grinding and bottom blade resurfacing to restore a perfect scissor action. The difference is immediately obvious after a proper grind.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🔧</div>
+        <div class="svc-title">Small Engine Repair</div>
+        <p class="svc-desc">Carburettor rebuilds, ignition systems, recoil starters and fuel system repairs on all small engine mowers. Won't start? We'll sort it.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🌿</div>
+        <div class="svc-title">Full Mower Service</div>
+        <p class="svc-desc">Complete strip-down, clean, adjustment, lapping and reassembly. Your mower comes back running better than it has in years.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🔩</div>
+        <div class="svc-title">Blade Backlapping</div>
+        <p class="svc-desc">Fine honing of the cylinder and bottom blade together for a surgical finish. Ideal for lawn enthusiasts who want a true, stripe-ready cut.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">🛠️</div>
+        <div class="svc-title">Push Mower Repairs</div>
+        <p class="svc-desc">Manual push reel mowers, electric and petrol cylinder mowers — all makes and models welcome. No job too old or too obscure.</p>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-icon">📦</div>
+        <div class="svc-title">Parts & Advice</div>
+        <p class="svc-desc">Hard-to-find parts sourced, plus honest advice on whether a repair is worth it. Chris won't sell you something you don't need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">The Workshop</p>
+      <h2>A proper dedicated<br>mower workshop.</h2>
+      <p class="section-body" style="margin-bottom:0">Chris recently moved into a purpose-built shop at 28 School Road — equipped specifically for cylinder mower precision work.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="tall">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fm=webp&fit=crop" alt="Reel mower on lawn — A Reel Mower Shop Christchurch">
+      </div>
+      <div class="gallery-std">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80&fm=webp&fit=crop" alt="Perfectly striped lawn result">
+      </div>
+      <div class="gallery-std">
+        <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4ebe5?w=700&q=80&fm=webp&fit=crop" alt="Lawn care tools and equipment">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="eyebrow">Why Choose Us</p>
+      <h2>The only shop in Christchurch<br>that truly specialises.</h2>
+      <p class="section-body">Most mower shops treat reel mowers as an afterthought. We don't. This is all we do — which means the quality shows.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-img reveal">
+        <img src="https://images.unsplash.com/photo-1621905252472-943afaa20e20?w=900&q=85&fm=webp&fit=crop" alt="Workshop machinery for mower repair">
+        <div class="why-img-badge">
+          <div class="badge-icon">⭐</div>
+          <div class="badge-text">
+            <strong>4.9 Stars</strong>
+            <span>33 Google Reviews</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-item-text">
+              <strong>Reel Mower Specialists</strong>
+              <span>We focus exclusively on cylinder and reel mowers — not an add-on service at a general repair shop.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-item-text">
+              <strong>Purpose-Built Workshop</strong>
+              <span>Operating from a dedicated shop at 28 School Road with proper grinding and lapping equipment.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-item-text">
+              <strong>Honest, Straightforward Service</strong>
+              <span>Chris tells you exactly what's needed and what isn't. No inflated quotes, no unnecessary work.</span>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-check">✓</div>
+            <div class="why-item-text">
+              <strong>All Makes Welcome</strong>
+              <span>From vintage push reels to modern cylinder mowers — if it has a reel, we can service it.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="section-inner">
+    <div class="reviews-header reveal">
+      <div>
+        <p class="eyebrow">Customer Reviews</p>
+        <h2>What Christchurch gardeners say.</h2>
+      </div>
+      <div>
+        <div class="rating-big">
+          <div class="rating-num">4.9</div>
+          <div>
+            <div class="stars-row">
+              <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+            </div>
+            <div class="rating-count">Based on 33 Google reviews</div>
+            <div class="google-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+              Verified Google Reviews
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Chris is incredible at what he does. Brought in my old Scotts reel mower — completely reground and set up perfectly. Cuts like it just came out of the factory. Absolutely brilliant."</p>
+        <div class="review-author">
+          <div class="review-avatar">TB</div>
+          <div><div class="review-name">Tim B.</div><div class="review-date">2 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Brought in my old Qualcast cylinder that hadn't started in two seasons. Chris had it running and cutting beautifully within a couple of days. Fair price, honest advice."</p>
+        <div class="review-author">
+          <div class="review-avatar">SM</div>
+          <div><div class="review-name">Sarah M.</div><div class="review-date">1 month ago</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Best in Christchurch for reel mowers — full stop. Very knowledgeable, great price, and quality you can see and feel in the cut. Won't be going anywhere else."</p>
+        <div class="review-author">
+          <div class="review-avatar">AP</div>
+          <div><div class="review-name">Andrew P.</div><div class="review-date">6 weeks ago</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Took in a vintage mower that two other shops refused to touch. Chris knew exactly what it needed and turned it around fast. The lawn looks incredible. Highly recommend."</p>
+        <div class="review-author">
+          <div class="review-avatar">RT</div>
+          <div><div class="review-name">Rachel T.</div><div class="review-date">2 months ago</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Chris clearly has a passion for this — you can tell the moment you walk in. Had a full service and grind done. The difference in my lawn is night and day."</p>
+        <div class="review-author">
+          <div class="review-avatar">DW</div>
+          <div><div class="review-name">Dave W.</div><div class="review-date">2 months ago</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+        <p class="review-text">"Finally found someone who knows what they're doing with cylinder mowers. Quick turnaround, explained everything clearly, and the result speaks for itself. Five stars."</p>
+        <div class="review-author">
+          <div class="review-avatar">KL</div>
+          <div><div class="review-name">Karen L.</div><div class="review-date">3 months ago</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="eyebrow">Get In Touch</p>
+        <h2>Drop us a message or bring your mower in.</h2>
+        <p class="section-body" style="margin-top:.8rem">Based at 28 School Road, Christchurch. Chris is happy to take a look and give you an honest quote — no obligation.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="c-icon">📞</div>
+            <div>
+              <div class="c-label">Phone</div>
+              <div class="c-val"><a href="tel:+64210300315">+64 210 300 315</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">✉️</div>
+            <div>
+              <div class="c-label">Email</div>
+              <div class="c-val"><a href="mailto:areelmowershop@outlook.com">areelmowershop@outlook.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="c-icon">📍</div>
+            <div>
+              <div class="c-label">Workshop</div>
+              <div class="c-val">28 School Road, Christchurch</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card reveal">
+        <div id="formWrap">
+          <div class="form-title">Send an enquiry</div>
+          <form action="https://api.staticforms.xyz/submit" method="post" id="contactForm">
+            <input type="hidden" name="apiKey" value="sf_768da8d33927e7f4f241d0a6">
+            <input type="hidden" name="subject" value="New enquiry — A Reel Mower Shop website">
+            <input type="hidden" name="replyTo" value="@">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstName" placeholder="John" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="tel" name="phone" placeholder="021 000 0000">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="john@email.com" required>
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option>Cylinder Grinding</option>
+                <option>Small Engine Repair</option>
+                <option>Full Mower Service</option>
+                <option>Blade Backlapping</option>
+                <option>Push Mower Repair</option>
+                <option>Parts Enquiry</option>
+                <option>Not Sure — Just Need a Look</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Tell us about your mower</label>
+              <textarea name="message" placeholder="Make, model, and what's going on with it…" required></textarea>
+            </div>
+            <button type="submit" class="form-submit" id="submitBtn">Send Enquiry →</button>
+            <p class="form-note">We'll get back to you quickly — usually the same day.</p>
+          </form>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2.8rem;margin-bottom:1rem">✅</div>
+          <h3>Enquiry Sent!</h3>
+          <p>Thanks — Chris will be in touch shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <a href="#" class="footer-logo nav-logo">
+      <div class="nav-logo-icon">🌿</div>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">A Reel Mower Shop</span>
+        <span class="nav-logo-sub">Christchurch Specialists</span>
+      </div>
+    </a>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+64210300315">+64 210 300 315</a>
+    </div>
+    <div class="footer-copy">© 2025 A Reel Mower Shop · 28 School Road, Christchurch · All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>28)
+},{passive:true});
+
+// Mobile menu
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open')
+}
+
+// Scroll reveal
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*75)
+      obs.unobserve(e.target)
+    }
+  })
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'})
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
+
+// Form submit
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault()
+  const btn=document.getElementById('submitBtn')
+  btn.textContent='Sending…'
+  btn.disabled=true
+  const data={}
+  new FormData(this).forEach((v,k)=>data[k]=v)
+  try{
+    const res=await fetch('https://api.staticforms.xyz/submit',{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
+    })
+    const json=await res.json()
+    if(json.success){
+      document.getElementById('formWrap').style.display='none'
+      document.getElementById('formSuccess').style.display='block'
+    } else {
+      btn.textContent='Error — try again'
+      btn.style.background='#7f1d1d'
+      btn.disabled=false
+    }
+  } catch {
+    btn.textContent='Network error — try again'
+    btn.style.background='#7f1d1d'
+    btn.disabled=false
+  }
+})
+</script>
+</body>
+</html>
