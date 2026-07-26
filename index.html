@@ -51,15 +51,15 @@ nav.scrolled{background:rgba(10,18,9,.95);backdrop-filter:blur(18px);box-shadow:
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:5rem}
 .hero-bg{position:absolute;inset:0;background-image:url('lawnmowers.jpg');background-size:cover;background-position:center 40%;filter:saturate(.75) contrast(1.08)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(108deg,rgba(8,14,7,.85) 0%,rgba(8,14,7,.6) 45%,rgba(8,14,7,.28) 78%,rgba(8,14,7,.12) 100%)}
-.hero-overlay2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,7,.18) 0%,transparent 42%,rgba(8,14,7,.94) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(8,14,7,.72) 0%,rgba(8,14,7,.4) 42%,rgba(8,14,7,.12) 72%,rgba(8,14,7,0) 100%)}
+.hero-overlay2{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,14,7,.1) 0%,transparent 38%,rgba(8,14,7,.8) 100%)}
 .hero-content{position:relative;z-index:10;max-width:1180px;margin:0 auto;padding:0 2rem;padding-top:88px;width:100%}
 .hero-tag{display:inline-flex;align-items:center;gap:.55rem;font-size:.66rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);margin-bottom:1.5rem;padding:.45rem 1rem;border-radius:99px;border:1px solid rgba(140,198,63,.25);background:rgba(140,198,63,.07)}
 .hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--greenLt);animation:pulse 2.2s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.78)}}
-.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2.9rem,7.2vw,5.6rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:var(--text);margin-bottom:1.5rem;max-width:720px}
+.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(2.9rem,7.2vw,5.6rem);font-weight:800;line-height:.95;letter-spacing:-.03em;color:#fff;margin-bottom:1.5rem;max-width:720px;text-shadow:0 2px 30px rgba(0,0,0,.55)}
 .hero h1 em{font-style:normal;color:var(--greenLt)}
-.hero-sub{font-size:1.05rem;color:var(--body);line-height:1.78;max-width:480px;margin-bottom:2.5rem}
+.hero-sub{font-size:1.05rem;color:rgba(238,244,234,.92);line-height:1.78;max-width:480px;margin-bottom:2.5rem;text-shadow:0 1px 14px rgba(0,0,0,.6)}
 .hero-btns{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:3rem}
 .btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.95rem 2.1rem;background:linear-gradient(135deg,var(--green),var(--greenLt));color:#fff;border:none;border-radius:9px;font-size:.93rem;font-weight:600;text-decoration:none;cursor:pointer;transition:filter .25s,transform .2s;box-shadow:0 12px 32px rgba(62,143,48,.28)}
 .btn-primary:hover{filter:brightness(1.1);transform:translateY(-2px)}
@@ -245,7 +245,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:2.5rem 2r
   <div class="hero-overlay"></div>
   <div class="hero-overlay2"></div>
   <div class="hero-content">
-    <div class="hero-tag">Christchurch's Reel Mower Specialists</div>
     <h1>Sharp blades.<br><em>Perfect cut.</em><br>Every time.</h1>
     <p class="hero-sub">Christchurch's dedicated reel mower workshop. Cylinder mower grinding, small engine repair, and full servicing, done right by someone who genuinely loves the craft.</p>
     <div class="hero-btns">
