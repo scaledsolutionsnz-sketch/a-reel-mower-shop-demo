@@ -163,9 +163,11 @@ section{padding:96px 0;position:relative}
 .steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start;padding:16px 18px;background:var(--dark-3);border-radius:var(--r)}
 .steps li::before{content:counter(s,decimal-leading-zero);font-family:var(--display);font-weight:900;color:var(--green-lt);font-size:1.3rem;line-height:1.1}
 .steps strong{display:block;font-family:var(--display);font-weight:800}
-.chiplist{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 26px;padding:0;list-style:none}
-.chiplist li{padding:7px 13px;border:1px solid var(--line);border-radius:999px;font-size:.95rem}
-.band-light .chiplist li,.band-bone .chiplist li{border-color:var(--line-dk)}
+/* showroom brand logos: official artwork, each on the logo's black so the white and lime versions read */
+.brands{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;list-style:none;margin:0 0 30px;padding:0}
+.brands li{display:flex;align-items:center;justify-content:center;height:104px;padding:18px 22px;background:var(--black);border-radius:var(--r)}
+.brands img{width:auto;height:auto;max-height:38px;max-width:100%}
+@media (max-width:760px){.brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.brands li{height:80px;padding:14px 16px}.brands img{max-height:28px}}
 .note{font-size:.92rem}
 
 /* ---------- STATS BAND ---------- */
